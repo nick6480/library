@@ -58,14 +58,14 @@ app.get("/", (req,res) =>{
     res.render("index");
 })
 app.get("/userprofile",isLoggedIn ,(req,res) =>{
-    res.render("userprofile");
+    res.render("userProfile");
 })
 //Auth Routes
 app.get("/login",(req,res)=>{
     res.render("login");
 });
 app.post("/login",passport.authenticate("local",{
-    successRedirect:"/userprofile",
+    successRedirect:"/userProfile",
     failureRedirect:"/login"
 }),function (req, res){
 });
